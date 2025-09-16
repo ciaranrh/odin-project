@@ -3,6 +3,7 @@ def stock_picker(input)
   min_day = 0
   max_day = 0
 
+  #nested loops where the outer loop picks each "buy" day, the inner loop checks all subsequent "sell" days, and tracks which buy/sell pair produces the largest price difference (profit).RetryClaude can make mistakes. Please double-check responses.
   input.each_with_index do |day, index|
     input[(index+1)..].each_with_index do |sub_day, sub_index| 
       actual_sub = sub_index + index + 1 #slice an array with input[(index+1)..], creates NEW array, and each_with_index starts counting from 0 for that new array, keeping this for educational purposes ;)

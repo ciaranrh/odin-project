@@ -3,17 +3,21 @@
     "configurations": [
         {
             "type": "rdbg",
-            "name": "Debug current file with rdbg",
+            "name": "Debug Tictactoe",
             "request": "launch",
-            "script": "${file}",
-            "args": [],
-            "askParameters": true,
-            "cwd": "${workspaceFolder}/Ruby" // mise.toml is in this directory, so mise activates the correct Ruby environment here
+            "command": "ruby",
+            "script": "main.rb",
+            "useTerminal": true,
+            "cwd": "${workspaceFolder}/Ruby/object_oriented_programming_basics/tic_tac_toe"
         },
         {
             "type": "rdbg",
-            "name": "Attach with rdbg",
-            "request": "attach"
+            "name": "Debug Mastermind",
+            "request": "launch",
+            "command": "ruby",
+            "script": "main.rb",
+            "useTerminal": true,
+            "cwd": "${workspaceFolder}/Ruby/object_oriented_programming_basics/mastermind"
         }
     ]
 }

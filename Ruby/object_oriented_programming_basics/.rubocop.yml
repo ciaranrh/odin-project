@@ -1,0 +1,43 @@
+# The behavior of RuboCop can be controlled via the .rubocop.yml
+# configuration file. It makes it possible to enable/disable
+# certain cops (checks) and to alter their behavior if they accept
+# any parameters. The file can be placed either in your home
+# directory or in some project directory.
+#
+# RuboCop will start looking for the configuration file in the directory
+# where the inspected file is and continue its way up to the root directory.
+#
+# See https://docs.rubocop.org/rubocop/configuration
+# .rubocop.yml for learning projects
+
+AllCops:
+  NewCops: enable  # Automatically uses new style rules as RuboCop adds them
+  TargetRubyVersion: 3.0  # Tells RuboCop which Ruby version syntax to expect
+
+# Limits how many lines a method can have
+Metrics/MethodLength:
+  Max: 20
+
+# Measures code complexity using Assignments, Branches (method calls), and Conditionals
+Metrics/AbcSize:
+  Max: 25
+
+# Counts how many possible execution paths through a method (if/else, loops, etc.)
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+# Similar to cyclomatic but weights nested conditionals as more complex
+Metrics/PerceivedComplexity:
+  Max: 10
+
+# Controls whether classes/modules must have a comment describing their purpose
+Style/Documentation:
+  Enabled: false
+
+# Controls whether to use 'single' or "double" quotes for strings
+Style/StringLiterals:
+  EnforcedStyle: single_quotes  # or double_quotes if you prefer
+
+# Controls whether files must start with # frozen_string_literal: true comment
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never  # Change to 'always' when you're ready
